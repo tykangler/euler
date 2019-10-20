@@ -1,7 +1,8 @@
 import sys
 
 def calc(n):
-   return sum([val for val in range(1, n) if val % 3 == 0 or val % 5 == 0])
+   return sum([val for val in range(1, n) 
+               if val % 3 == 0 or val % 5 == 0])
 
 def mathy(n):
    mult_sum = lambda bound : \
@@ -9,11 +10,10 @@ def mathy(n):
    return mult_sum(5) + mult_sum(3) - mult_sum(15)
 
 def test(n):
-   for iteration in range(0, n):
+   for iteration in range(1, n + 1):
       if mathy(iteration) != calc(iteration):
          return (False, iteration)
-   print("PASSED")
-   return True
+   return (True, iteration)
 
 dispatcher = {'mathy': mathy, 'calc': calc, 'test': test}
 
