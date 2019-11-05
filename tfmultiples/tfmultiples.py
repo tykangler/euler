@@ -9,10 +9,7 @@ def mathy(n):
       bound * (((n - 1) // bound) ** 2 + ((n - 1) // bound)) // 2
    return mult_sum(5) + mult_sum(3) - mult_sum(15)
 
-dispatcher = {'mathy': mathy, 'brute': brute}
+dispatch = {'mathy': mathy, 'brute': brute}
 
-if __name__ == '__main__':
-   func = dispatcher[sys.argv[1]]
-   in_val = int(sys.argv[2])
-   result = func(in_val)
-   print(f"{func.__name__}({in_val}): {result}")
+def solve(n, func):
+   return dispatch[func](n)
